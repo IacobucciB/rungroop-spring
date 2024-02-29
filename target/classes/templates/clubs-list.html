@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~(layout)">
 
 <head>
     <title>Rungroop Club List</title>
-    <!-- Add your CSS links here -->
 </head>
 
 <body>
     <h2>Rungroop Club List</h2>
+    <section layout:fragment="body"></section>
     <div class="row gx-5">
-        <!-- Iterate over each club in the 'clubs' model attribute -->
         <div th:each="club : ${clubs}" class="col-lg-6">
-            <!-- Display club information -->
             <div>
-                <!-- Display club photo -->
                 <img class="img-fluid rounded-3 mb-5" th:src="${club.photoUrl}" alt="Club Photo" />
-                <!-- Display club title -->
                 <a th:text="${club.title}" class="h3 fw-bolder text-decoration-none" href="#">Club Title</a>
             </div>
         </div>
